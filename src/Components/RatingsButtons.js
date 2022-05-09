@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AddRatings } from "../Context/Ratings";
 
 const Flex = styled.div`
@@ -9,7 +9,7 @@ const Flex = styled.div`
 
 const Button = styled.span`
   background-color: ${(props) =>
-    props.btnColor ? "hsl(25, 97%, 53%)" : "hsl(216, 12%, 8%)"};
+    props.btnColor ? "var(--Orange)" : "var(--primary)"};
   display: block;
   width: 55px;
   height: 55px;
@@ -17,7 +17,8 @@ const Button = styled.span`
   text-align: center;
   padding: 18px 0;
   border-radius: 100px;
-  color: var(--Medium-Grey);
+  color: ${(props) =>
+    props.btnColor ? "#fff" : "vgit add ,.ar(--Medium-Grey)"};
   font-size: 17px;
   cursor: pointer;
   transition: all 200ms ease-in-out;
@@ -49,10 +50,22 @@ const Submmit = styled.a`
 
 const RattingsButtons = (props) => {
   const { SetRate } = useContext(AddRatings);
+  const [active, setActive] = useState({});
+
   const btn = [];
+
+  function SubmitChange(num) {
+    SetRate(num);
+    setActive({ [num]: true });
+  }
+
   for (let i = 1; i < 6; i++) {
     btn.push(
-      <Button onClick={() => SetRate(i)} key={`btn-${i}`}>
+      <Button
+        onClick={() => SubmitChange(i)}
+        key={`btn-${i}`}
+        btnColor={active[i]}
+      >
         {i}
       </Button>
     );

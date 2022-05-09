@@ -1,27 +1,18 @@
 import styled from "styled-components";
+import Card from "./Card";
 import icon from "../Images/icon-star.svg";
 import RattingsButtons from "./RatingsButtons";
 import Ratings from "../Context/Ratings";
 
-const StyledRatings = styled.div`
-  width: 350px;
-  height: 350px;
-  margin: 0 auto;
-  border-radius: 30px;
-  background-color: var(--Dark-Blue);
-  padding: 30px;
-  color: var(--White);
+const Heading = styled.h1`
+  margin-bottom: 15px;
+`;
 
-  & p {
-    color: var(--Light-Grey);
-    margin-bottom: 15px;
-    font-size: 15px;
-    line-height: 25px;
-  }
-
-  & h1 {
-    margin-bottom: 15px;
-  }
+const Paragraph = styled.p`
+  color: var(--Light-Grey);
+  margin-bottom: 15px;
+  font-size: 15px;
+  line-height: 25px;
 `;
 
 const StyledIcon = styled.span`
@@ -38,19 +29,19 @@ const StyledIcon = styled.span`
 
 function RatingsCard(props) {
   return (
-    <StyledRatings>
+    <Card>
       <StyledIcon>
         <img src={icon} alt="star" />
       </StyledIcon>
-      <h1>How did we do?</h1>
-      <p>
+      <Heading>How did we do?</Heading>
+      <Paragraph>
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
-      </p>
+      </Paragraph>
       <Ratings>
         <RattingsButtons />
       </Ratings>
-    </StyledRatings>
+    </Card>
   );
 }
 
