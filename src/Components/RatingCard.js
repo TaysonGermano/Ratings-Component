@@ -1,8 +1,9 @@
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import icon from "../Images/icon-star.svg";
 import RattingsButtons from "./RatingsButtons";
-import Ratings from "../Context/Ratings";
+import { AddRatings } from "../Context/Ratings";
 
 const Heading = styled.h1`
   margin-bottom: 15px;
@@ -28,6 +29,12 @@ const StyledIcon = styled.span`
 `;
 
 function RatingsCard(props) {
+  const { SetRate, active } = useContext(AddRatings);
+
+  function SubmitChange(num) {
+    SetRate(num);
+  }
+
   return (
     <Card>
       <StyledIcon>
@@ -38,9 +45,8 @@ function RatingsCard(props) {
         Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </Paragraph>
-      <Ratings>
-        <RattingsButtons />
-      </Ratings>
+
+      <RattingsButtons HandleChange={SubmitChange} btnState={active} />
     </Card>
   );
 }
