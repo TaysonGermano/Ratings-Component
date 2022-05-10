@@ -17,8 +17,7 @@ const Button = styled.span`
   text-align: center;
   padding: 18px 0;
   border-radius: 100px;
-  color: ${(props) =>
-    props.btnColor ? "#fff" : "vgit add ,.ar(--Medium-Grey)"};
+  color: ${(props) => (props.btnColor ? "#fff" : "var(--Medium-Grey)")};
   font-size: 17px;
   cursor: pointer;
   transition: all 200ms ease-in-out;
