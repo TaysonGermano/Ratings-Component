@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import Card from "./Card";
 import icon from "../Images/icon-star.svg";
