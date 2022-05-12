@@ -27,7 +27,7 @@ Users are be able to:
 
 ### Links
 
-- Live Site URL: [URL here]()
+- Live Site URL: [URL here](https://rating-component-reactjs.netlify.app/)
 
 ## My process
 
