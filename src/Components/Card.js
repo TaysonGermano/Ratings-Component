@@ -7,7 +7,11 @@ const Card = styled.div`
   height: auto;
   margin: 0 auto;
   border-radius: 30px;
-  background-color: var(--Dark-Blue);
+  background: linear-gradient(
+    214deg,
+    hsl(213deg 19% 18% / 88%),
+    hsl(216deg 12% 8% / 47%)
+  );
   padding: 30px;
   box-sizing: border-box;
   color: var(--White);
